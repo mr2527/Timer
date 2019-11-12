@@ -1,95 +1,95 @@
 package com.example.timer;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Chronometer;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    private static final long START_TIME_IN_MILLIS = 600000;
-    private TextView mTextViewCountDown;
-    private Button mButtonStartPause;
-    private Button mButtonReset;
-    private CountDownTimer mCountDownTimer;
-    private boolean mTimerRunning;
-    private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+    private Chronometer chronometer;
+    private boolean running;
+    private long pause;
 
+    /**
+     * auto-generated method that creates what the user sees/creates the application
+     * @param savedInstanceState
+     * @author (edited by) Miguel Rosario
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+        chronometer = findViewById(R.id.chronometer);
+        chronometer.setFormat("Time: %s");
+        chronometer.setBase(SystemClock.elapsedRealtime());
 
-        mButtonStartPause = findViewById(R.id.button_start_pause);
-        mButtonReset = findViewById(R.id.button_reset);
-
-        mButtonStartPause.setOnClickListener(new View.OnClickListener() {
+        chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
-            public void onClick(View v) {
-                if (mTimerRunning) {
-                    pauseTimer();
-                } else {
-                    startTimer();
+            public void onChronometerTick(Chronometer chronometer) {
+                // Creates a special Message when the timer hits 10 seconds (Subject to change)
+                if((SystemClock.elapsedRealtime()-chronometer.getBase())>=10000){
+                    Toast.makeText(MainActivity.this,
+                            "SE > CS",
+                            Toast.LENGTH_SHORT)
+                            .show();
+
                 }
             }
         });
-
-        mButtonReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetTimer();
-            }
-        });
-
-        updateCountDownText();
     }
 
-    private void startTimer() {
-        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                mTimeLeftInMillis = millisUntilFinished;
-                updateCountDownText();
-            }
+    /**
+     * Starts the timer from 00 (or from the time when paused)
+     * and counts until the user stops it.
+     * @param v - The view
+     * @author Miguel Rosario
+     */
+    public void startChronometer(View v){
+        //if not running
+        if(!running){
 
-            @Override
-            public void onFinish() {
-                mTimerRunning = false;
-                mButtonStartPause.setText("Start");
-                mButtonStartPause.setVisibility(View.INVISIBLE);
-                mButtonReset.setVisibility(View.VISIBLE);
-            }
-        }.start();
-
-        mTimerRunning = true;
-        mButtonStartPause.setText("pause");
-        mButtonReset.setVisibility(View.INVISIBLE);
+            //Grab the SystemClock Timer and start at 0
+            //But if the timer was started and then paused
+            //Subtract the elapsed time between pause and start to
+            //get the correct timing.
+            chronometer.setBase(SystemClock.elapsedRealtime() - pause);
+            chronometer.start();
+            running = true;
+        }
     }
 
-    private void pauseTimer() {
-        mCountDownTimer.cancel();
-        mTimerRunning = false;
-        mButtonStartPause.setText("Start");
-        mButtonReset.setVisibility(View.VISIBLE);
+    /**
+     * Pauses the chronometer and keeps track of the elapsed system time
+     * so it may subtract it once the timer is resumed.
+     * @param v - The view
+     * @author Miguel Rosario
+     */
+    public void pauseChronometer(View v){
+        //if running
+        if(running){
+
+            //pause the counter
+            chronometer.stop();
+            pause = SystemClock.elapsedRealtime() - chronometer.getBase();
+
+            //timer is no longer running
+            running = false;
+        }
     }
 
-    private void resetTimer() {
-        mTimeLeftInMillis = START_TIME_IN_MILLIS;
-        updateCountDownText();
-        mButtonReset.setVisibility(View.INVISIBLE);
-        mButtonStartPause.setVisibility(View.VISIBLE);
+    /**
+     * Resets the timer to 00:00
+     * @param v - the view
+     * @author Miguel Rosario
+     */
+    public void resetChronometer(View v){
+        //Set the timer back to 00:00
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        pause = 0;
     }
 
-    private void updateCountDownText() {
-        int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
-        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
-
-        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-
-        mTextViewCountDown.setText(timeLeftFormatted);
-    }
 }
