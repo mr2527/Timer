@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * auto-generated method that creates what the user sees/creates the application
      * @param savedInstanceState
-     * @author (edited by) Miguel Rosario
+     * @author (edited by) Miguel Rosario, Su Thit Thazin, Joseph Saltalamacchia
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
      * Starts the timer from 00 (or from the time when paused)
      * and counts until the user stops it.
      * @param v - The view
-     * @author Miguel Rosario
+     * @author Miguel Rosario + Joseph Saltalamacchia
      */
     public void startChronometer(View v){
         //if not running
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
      * Pauses the chronometer and keeps track of the elapsed system time
      * so it may subtract it once the timer is resumed.
      * @param v - The view
-     * @author Miguel Rosario
+     * @author Su Thit Thazin + Miguel Rosario
      */
     public void pauseChronometer(View v){
         //if running
