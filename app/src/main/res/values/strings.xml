@@ -8,4 +8,7 @@
     <string name="reset">Reset</string>
     <string name="fancy_rit_bricks">Fancy RIT Bricks</string>
     <string name="chronokick_v1">ChronoKick V1</string>
+    <string name="title_activity_task">TaskActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
