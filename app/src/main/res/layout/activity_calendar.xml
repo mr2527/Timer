@@ -7,4 +7,11 @@
     android:background="MalakOWWsky.jpg"
     tools:context=".calendar">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/MalakOWWsky"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="339dp"></LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
