@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
                 // Creates a special Message when the timer hits 10 seconds (Subject to change)
-                if((SystemClock.elapsedRealtime()-chronometer.getBase())>=10000){
+                if((SystemClock.elapsedRealtime()-chronometer.getBase())>=150000){
                     Toast.makeText(MainActivity.this,
                             "SE > CS",
                             Toast.LENGTH_SHORT)
