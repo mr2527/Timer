@@ -3,15 +3,26 @@ package com.example.timer;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Toast;
+import android.content.Intent;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
     private Chronometer chronometer;
+    private Button calandarButton;
+    private Button taskButton;
     private boolean running;
     private long pause;
+
+
+
 
     /**
      * auto-generated method that creates what the user sees/creates the application
@@ -38,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
                             .show();
 
                 }
+            }
+        });
+
+        calandarButton = (Button) findViewById(R.id.calendarButton);
+
+        calandarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+             public void onClick(View v){
+                goToCalendar();
             }
         });
     }
@@ -91,5 +111,11 @@ public class MainActivity extends AppCompatActivity {
         chronometer.setBase(SystemClock.elapsedRealtime());
         pause = 0;
     }
+
+   public void goToCalendar()
+   {
+       Intent intent = new Intent(this, calendar.class);
+       startActivity(intent);
+   }
 
 }

@@ -50,4 +50,16 @@
         android:text="@string/fancy_rit_bricks"
         android:textColor="#FF5722" />
 
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calendar" />
+
+    <Button
+        android:id="@+id/Tasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tasks" />
+
 </LinearLayout>
