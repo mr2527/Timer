@@ -2,8 +2,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/taskActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/androidstudio"
     tools:context=".TaskActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -32,7 +34,7 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.navigation.NavigationView
             android:layout_width="match_parent"

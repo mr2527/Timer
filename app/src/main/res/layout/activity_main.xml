@@ -57,7 +57,7 @@
         android:text="@string/calendar" />
 
     <Button
-        android:id="@+id/Tasks"
+        android:id="@+id/taskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tasks" />

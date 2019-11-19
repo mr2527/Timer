@@ -8,7 +8,6 @@ import android.widget.Chronometer;
 import android.widget.Toast;
 import android.content.Intent;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        calandarButton = (Button) findViewById(R.id.calendarButton);
+        calandarButton = findViewById(R.id.calendarButton);
 
         calandarButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -60,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
                 goToCalendar();
             }
         });
+
+        taskButton = findViewById(R.id.taskButton);
+
+        taskButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                goToTask();
+            }
+        });
+
     }
 
     /**
@@ -117,5 +126,11 @@ public class MainActivity extends AppCompatActivity {
        Intent intent = new Intent(this, calendar.class);
        startActivity(intent);
    }
+
+    public void goToTask()
+    {
+        Intent intent = new Intent(this, TaskActivity.class);
+        startActivity(intent);
+    }
 
 }
