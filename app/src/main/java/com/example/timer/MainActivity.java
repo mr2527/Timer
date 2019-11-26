@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        song = MediaPlayer.create(MainActivity.this,R.raw.purpleplanet);
-
-        song.start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -144,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToTask()
     {
-        Intent intent2 = new Intent(this, TaskActivity.class);
+        Intent intent2 = new Intent(this, Task.class);
         startActivity(intent2);
     }
 
