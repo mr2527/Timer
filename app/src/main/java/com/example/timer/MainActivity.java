@@ -7,10 +7,11 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Toast;
 import android.content.Intent;
+import android.media.MediaPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button taskButton;
     private boolean running;
     private long pause;
+    MediaPlayer song;
 
 
 
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 goToTask();
             }
         });
+
 
     }
 
@@ -121,16 +125,24 @@ public class MainActivity extends AppCompatActivity {
         pause = 0;
     }
 
+    /**
+     * Activates the calendar window
+     */
    public void goToCalendar()
    {
        Intent intent = new Intent(this, calendar.class);
        startActivity(intent);
    }
 
+    /**
+     * Activates the task window
+     *
+     * Todo
+     */
     public void goToTask()
     {
-        Intent intent = new Intent(this, TaskActivity.class);
-        startActivity(intent);
+        Intent intent2 = new Intent(this, Task.class);
+        startActivity(intent2);
     }
 
 }
