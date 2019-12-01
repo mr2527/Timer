@@ -137,12 +137,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Activates the task window
      *
-     * Todo
+     * @author Su Thit Thazin
      */
     public void goToTask()
     {
-        Intent intent2 = new Intent(this, Task.class);
+        Intent intent2 = new Intent(this, addTask.class);
         startActivity(intent2);
     }
-
 }
