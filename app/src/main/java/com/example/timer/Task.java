@@ -44,7 +44,6 @@ public class Task extends AppCompatActivity {
         });
 
         this.button2 = findViewById(R.id.taskButton2);
-
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -53,8 +52,8 @@ public class Task extends AppCompatActivity {
             }
 
         });
-        this.button3 = findViewById(R.id.taskButton3);
 
+        this.button3 = findViewById(R.id.taskButton3);
         button3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -65,7 +64,6 @@ public class Task extends AppCompatActivity {
         });
 
         this.button4 = findViewById(R.id.taskButton4);
-
         button4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -76,7 +74,6 @@ public class Task extends AppCompatActivity {
         });
 
         this.button5 = findViewById(R.id.taskButton5);
-
         button5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -87,7 +84,6 @@ public class Task extends AppCompatActivity {
         });
 
         this.button6 = findViewById(R.id.taskButton6);
-
         button6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -98,7 +94,6 @@ public class Task extends AppCompatActivity {
         });
 
         this.button7 = findViewById(R.id.taskButton7);
-
         button7.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -151,12 +146,6 @@ public class Task extends AppCompatActivity {
             }
 
         });
-
-
-
-
-
-
 
     }
 }

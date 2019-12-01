@@ -8,7 +8,9 @@ import android.widget.Button;
 // kjd fgbjc v
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/**
+ *
+ */
 public class calendar extends AppCompatActivity {
 
     Button homeButton;
@@ -30,8 +32,7 @@ public class calendar extends AppCompatActivity {
 
     public void goHome()
     {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 }
