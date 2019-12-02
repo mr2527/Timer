@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Task"></activity>
+        <activity android:name=".add_task"></activity>
         <activity android:name=".calendar" />
         <activity
             android:name=".MainActivity"

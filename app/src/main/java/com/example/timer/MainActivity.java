@@ -127,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Activates the calendar window
+     *
+     * @author Joseph Saltalamacchia + Miguek Rosario
      */
    public void goToCalendar()
    {
@@ -141,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToTask()
     {
-        Intent intent2 = new Intent(this, addTask.class);
+        Intent intent2 = new Intent(this, add_task.class);
         startActivity(intent2);
     }
 }

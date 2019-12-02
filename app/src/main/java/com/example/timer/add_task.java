@@ -11,7 +11,7 @@ import android.widget.Button;
  * Window for adding a task, prompts the user to enter the name, the due date, and the
  * description of the task
  */
-public class addTask extends AppCompatActivity {
+public class add_task extends AppCompatActivity {
 
     private Button createTask;
 
