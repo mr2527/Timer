@@ -14,13 +14,25 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <Button
             android:id="@+id/Home"
             android:layout_width="138dp"
             android:layout_height="89dp"
             android:text="@string/home" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="496dp"
+            android:dateTextAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:focusedMonthDateColor="#EB0000"
+            android:selectedDateVerticalBar="@drawable/bricks"
+            android:unfocusedMonthDateColor="#EE0F0F"
+            android:weekDayTextAppearance="@style/TextAppearance.AppCompat.Display1" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
