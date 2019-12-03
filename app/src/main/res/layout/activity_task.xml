@@ -16,67 +16,67 @@
         <Button
             android:id="@+id/taskButton1"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/button" />
+            android:layout_height="67dp"
+            android:background="@drawable/a" />
 
         <Button
             android:id="@+id/taskButton2"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="@drawable/button" />
+            android:layout_height="67dp"
+            android:background="@drawable/b" />
 
         <Button
             android:id="@+id/taskButton3"
             android:layout_width="match_parent"
-            android:layout_height="77dp"
-            android:background="@drawable/button" />
+            android:layout_height="67dp"
+            android:background="@drawable/c" />
 
         <Button
             android:id="@+id/taskButton4"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:background="@drawable/button" />
+            android:layout_height="67dp"
+            android:background="@drawable/d" />
 
         <Button
             android:id="@+id/taskButton7"
             android:layout_width="match_parent"
-            android:layout_height="73dp"
-            android:background="@drawable/button" />
+            android:layout_height="67dp"
+            android:background="@drawable/e" />
 
         <Button
             android:id="@+id/taskButton8"
             android:layout_width="match_parent"
-            android:layout_height="73dp"
-            android:background="@drawable/button" />
+            android:layout_height="67dp"
+            android:background="@drawable/f" />
 
         <Button
             android:id="@+id/taskButton9"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:background="@drawable/button" />
+            android:layout_height="67dp"
+            android:background="@drawable/malac" />
 
         <Button
             android:id="@+id/taskButton10"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_height="67dp"
             android:background="@drawable/button" />
 
         <Button
             android:id="@+id/taskButton11"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="67dp"
             android:background="@drawable/button" />
 
         <Button
             android:id="@+id/taskButton5"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="67dp"
             android:background="@drawable/button" />
 
         <Button
             android:id="@+id/taskButton6"
             android:layout_width="match_parent"
-            android:layout_height="88dp"
+            android:layout_height="67dp"
             android:background="@drawable/button" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
