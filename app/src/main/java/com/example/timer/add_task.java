@@ -38,7 +38,7 @@ public class add_task extends AppCompatActivity {
     private BufferedReader in;
 
     /**
-     * auto-generated method that creates what the user sees/creates the application
+     *  auto-generated method that creates what the user sees/creates the application
      * @param savedInstanceState
      * @author Su Thit Thazin $ Joseph Saltalamacchia
      */
